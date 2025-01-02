@@ -1,5 +1,6 @@
 import { Title } from '@/common/components';
-import React from 'react';
+import { useInView } from 'motion/react';
+import React, { useRef } from 'react';
 import { FiArrowUpRight } from 'react-icons/fi';
 import styled from 'styled-components';
 
@@ -68,10 +69,14 @@ const Item = styled.li`
   }
 `;
 function ExtraActivities() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    margin: '-100px 0px -100px 0px',
+  });
   return (
-    <Container>
-      <Title>Extra activities.</Title>
-      <List>
+    <Container ref={ref}>
+      <Title className={isInView ? 'slide' : ''}>Extra activities.</Title>
+      <List className={isInView ? 'slide delay01' : ''}>
         <Item>
           <h5>IT시스템공학과</h5>
           <span className="date">2021.03~ 2025.02</span>

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { Description, Title } from '@/common/components';
+import { Description } from '@/common/components';
 import Image from 'next/image';
 import IntroTitle from '../components/IntroTitle';
 

@@ -81,16 +81,16 @@ const Contents = styled.div``;
 function AboutMe() {
   return (
     <Container>
-      <Title>About me.</Title>
+      <Title className="slide delay01">About me.</Title>
       <ProfileSection>
-        <Profile>
+        <Profile className="slide delay02">
           <Image
             src="/assets/images/profile.jpg"
             alt="baejiu's portfolio"
             fill
           />
         </Profile>
-        <Contents>
+        <Contents className="slide delay03">
           <SubTitle>안녕하세요. 만나서 반갑습니다.</SubTitle>
           <Description>
             <br />

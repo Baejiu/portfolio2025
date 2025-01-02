@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { Title } from '@/common/components';
 import { FiArrowUpRight } from 'react-icons/fi';
+import { useInView } from 'motion/react';
 
 const Container = styled.div`
   width: 100vw;
@@ -95,10 +96,14 @@ const Contents = styled.div`
 `;
 
 function WorkExperiences() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    margin: '-100px 0px -100px 0px',
+  });
   return (
-    <Container>
-      <Title>Work Experiences.</Title>
-      <List>
+    <Container ref={ref}>
+      <Title className={isInView ? 'slide' : ''}>Work Experiences.</Title>
+      <List className={isInView ? 'slide delay01' : ''}>
         <Item>
           <Logo>
             <Image
