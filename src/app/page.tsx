@@ -1,24 +1,16 @@
 'use client';
-import Image from 'next/image';
 
-import Title from '../common/components/Title';
-import { useTheme } from 'styled-components';
+import PageContainer from '@/common/components/layout/PageContainer';
+import Intro from './(main)/sections/Intro';
+import Features from './(main)/sections/Features';
+import Skills from './(main)/sections/Skills';
 
 export default function Home() {
-  const theme = useTheme();
   return (
-    <div>
-      <main>
-        <Title>Hi!!!</Title>
-        <button onClick={() => theme.setTheme()}>mode</button>
-        <Image
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-      </main>
-    </div>
+    <PageContainer>
+      <Intro />
+      <Skills />
+      <Features />
+    </PageContainer>
   );
 }

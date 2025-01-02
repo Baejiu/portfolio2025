@@ -6,13 +6,33 @@ const grey = {
   2: '#6e6e73',
   3: '#272729',
   4: '#1D1D1F',
-  5: '#000000',
+  5: '#111111',
+};
+const lightDefault = {
+  header: '#fffc',
+  bg: grey[0],
+  title01: grey[4],
+  title_sub: grey[3],
+  description: grey[2],
+  line: grey[1],
+};
+const darkDefault = {
+  header: '#000c',
+  bg: grey[5],
+  line: grey[4],
+  title01: grey[1],
+  title_sub: grey[2],
+  description: grey[0],
 };
 const point = {
+  white: grey[0],
+  black: grey[5],
   orenge: '#fd8c1f',
   pink: '#ff3f98',
   violet: '#e9a5ff',
   blue: '#4186fd',
+  green: '#49E2AC',
+  lightGreen: '#eaf4e7',
 };
 const radius = {
   none: '0px',
@@ -26,10 +46,7 @@ const theme = {
   dark: {
     id: 'dark',
     color: {
-      bg: grey[5],
-      title01: grey[1],
-      sub_title: grey[2],
-      description: grey[3],
+      ...darkDefault,
       ...point,
     },
     radius,
@@ -37,14 +54,15 @@ const theme = {
   light: {
     id: 'light',
     color: {
-      bg: grey[0],
-      title01: grey[4],
-      sub_title: grey[3],
-      description: grey[2],
+      ...lightDefault,
       ...point,
     },
     radius,
   },
 };
 
+type colorType = keyof typeof lightDefault | keyof typeof point;
+type radiusType = keyof typeof radius;
+
+export type { colorType, radiusType };
 export default theme;
