@@ -1,10 +1,14 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { FiArrowUpRight, FiArrowUp } from 'react-icons/fi';
+import { FiArrowUp } from 'react-icons/fi';
 
 const StyledPageContainer = styled.div`
   background-color: ${({ theme }) => theme.color.bg};
   min-height: calc(100vh);
+
+  @media screen and (max-width: 768px) {
+    min-height: auto;
+  }
 `;
 const TopButton = styled.button`
   position: fixed;
