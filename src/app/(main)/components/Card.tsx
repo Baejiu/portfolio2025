@@ -3,7 +3,7 @@ import { useInView } from 'motion/react';
 import React, { PropsWithChildren, ReactElement, useRef } from 'react';
 import styled from 'styled-components';
 
-const Container = styled.li<{ delayTime?: number }>`
+const Container = styled.li<{ $delayTime?: number }>`
   border: 1px solid ${({ theme }) => theme.color.line};
   padding: 48px 16px 24px;
   border-radius: ${({ theme }) => theme.radius.medium};
@@ -11,7 +11,8 @@ const Container = styled.li<{ delayTime?: number }>`
   flex-direction: column;
   gap: 16px;
   cursor: default;
-  animation-delay: ${({ delayTime }) => (delayTime ? `${delayTime}s` : '0s')};
+  animation-delay: ${({ $delayTime }) =>
+    $delayTime ? `${$delayTime}s` : '0s'};
   transition: all 0.2s;
 
   & > svg {
@@ -48,7 +49,7 @@ function Card(props: PropsWithChildren<Props>) {
 
   const className = isInView ? 'slide' : '';
   return (
-    <Container ref={ref} className={className} delayTime={delay}>
+    <Container ref={ref} className={className} $delayTime={delay}>
       {icon}
       <SubTitle>
         {title} <Label>{label}</Label>

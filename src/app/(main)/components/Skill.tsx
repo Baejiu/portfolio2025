@@ -7,18 +7,18 @@ interface Props {
   title: string;
   description: string;
 }
-const Group = styled.div<{ active?: boolean }>`
+const Group = styled.div<{ $active?: boolean }>`
   position: relative;
   text-align: center;
-  transform: ${({ active }) => (active ? `scale(1.02)` : 'scale(1)')};
+  transform: ${({ $active }) => ($active ? `scale(1.02)` : 'scale(1)')};
   transition: all 0.4s;
   padding: 32px 40px;
 
   max-width: 1280px;
   border-radius: ${({ theme }) => theme.radius.large};
   margin: 20px 0;
-  background-color: ${({ active, theme }) =>
-    active ? (theme.id == 'dark' ? `#1116` : `#fff8`) : 'none'};
+  background-color: ${({ $active, theme }) =>
+    $active ? (theme.id == 'dark' ? `#1116` : `#fff8`) : 'none'};
 
   width: 100%;
   /* &::before {
@@ -29,13 +29,13 @@ const Group = styled.div<{ active?: boolean }>`
     z-index: -1;
     position: absolute;
     display: block;
-    left: ${({ active }) => (active ? '0' : '50%')};
+    left: ${({ $active }) => ($active ? '0' : '50%')};
     height: 100%;
 
     content: '';
-    width: ${({ active }) => (active ? '100%' : '0px')};
-    background-color: ${({ active, theme }) =>
-    active ? theme.color.line : theme.color.white};
+    width: ${({ $active }) => ($active ? '100%' : '0px')};
+    background-color: ${({ $active, theme }) =>
+    $active ? theme.color.line : theme.color.white};
   } */
 `;
 
@@ -47,7 +47,7 @@ function Skill(props: Props) {
     margin: '-48% 0px -48% 0px',
   });
   return (
-    <Group ref={ref} active={isInView || false}>
+    <Group ref={ref} $active={isInView || false}>
       <SubTitle>
         {isInView && `🌿 `}
         {title}
