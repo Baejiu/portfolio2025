@@ -1,5 +1,23 @@
-import { transporter, mailOptions } from '@/lib/nodemailer';
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
+
+const email = process.env.REACT_APP_GMAIL_ADDRESS;
+const pass = process.env.REACT_APP_GMAIL_PASS;
+
+const transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
+  auth: {
+    user: email,
+    pass,
+  },
+});
+
+const mailOptions = {
+  from: email,
+  to: 'jiumaker@naver.com',
+};
 
 export async function POST(request) {
   const data = await request.json();
