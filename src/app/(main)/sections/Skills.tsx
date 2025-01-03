@@ -1,7 +1,6 @@
 import React, { useCallback, useRef } from 'react';
 import styled, { useTheme } from 'styled-components';
 import { Title } from '@/common/components';
-
 import Skill from '../components/Skill';
 import { useInView } from 'motion/react';
 
