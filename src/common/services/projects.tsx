@@ -121,7 +121,7 @@ export default class ProiectService {
   static getTags(): string[] {
     const tags: Set<string> = new Set();
     ProiectService.data.forEach((item) => {
-      let tagArray = item.tags.split(',');
+      const tagArray = item.tags.split(',');
       tagArray.forEach((tag) => tags.add(tag));
     });
     return Array.from(tags);

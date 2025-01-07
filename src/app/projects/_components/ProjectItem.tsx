@@ -1,10 +1,8 @@
 import React from 'react';
-
 import styled from 'styled-components';
 import Image from 'next/image';
 import { ProjectType } from '@/common/services/projects';
 import { FiArrowUpRight } from 'react-icons/fi';
-import { useRouter } from 'next/navigation';
 
 const Container = styled.li<{ hasLink?: boolean }>`
   position: relative;
