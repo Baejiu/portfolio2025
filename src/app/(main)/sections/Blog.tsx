@@ -4,6 +4,7 @@ import { useInView } from 'motion/react';
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Container = styled.div`
   width: 100vw;
@@ -21,6 +22,15 @@ const Container = styled.div`
   }
   & li {
     max-width: 200px;
+    cursor: pointer;
+  }
+  & li:hover p {
+    color: ${({ theme }) => theme.color.title01};
+    font-weight: bold;
+  }
+  & li p {
+    padding-top: 8px;
+    transition: all 0.2s;
   }
   & img {
     border-radius: ${({ theme }) => theme.radius.small};
@@ -52,18 +62,20 @@ function Blog() {
       <ul>
         {data.map((item) => (
           <li>
-            {item.thumbnail ? (
-              <Image
-                src={item.thumbnail}
-                width={200}
-                height={200}
-                alt={item.title}
-              />
-            ) : (
-              <Empty>📎</Empty>
-            )}
+            <Link href={item.url} target="_black">
+              {item.thumbnail ? (
+                <Image
+                  src={item.thumbnail}
+                  width={200}
+                  height={200}
+                  alt={item.title}
+                />
+              ) : (
+                <Empty>📎</Empty>
+              )}
 
-            <Description>{item.title}</Description>
+              <Description>{item.title}</Description>
+            </Link>
           </li>
         ))}
       </ul>
