@@ -74,7 +74,9 @@ function LatestProjects() {
                 key={item.id}
                 onClick={() => {
                   const element = document.getElementById(`${index}`);
-                  element && element.scrollIntoView({ behavior: 'smooth' });
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }}
                 className={selected == index ? 'selected' : ''}
               >

@@ -38,7 +38,7 @@ function ProjectList({ selectFilter }: Props) {
     setTimeout(() => {
       setLoading(false);
     }, 250);
-  }, [selectFilter]);
+  }, [selectFilter, data]);
   return (
     <Container loading={loading} className="slide delay02">
       {data.map((item) => (

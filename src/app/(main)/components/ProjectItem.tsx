@@ -39,13 +39,15 @@ interface Props {
 function ProjectItem(props: Props) {
   const { item, index, handleView, selected } = props;
   const targetRef = useRef<HTMLLIElement>(null);
-  const handleScroll = useCallback(([entries]: IntersectionObserverEntry[]) => {
-    if (entries.isIntersecting) {
-      console.log(entries);
-      handleView();
-    } else {
-    }
-  }, []);
+  const handleScroll = useCallback(
+    ([entries]: IntersectionObserverEntry[]) => {
+      if (entries.isIntersecting) {
+        handleView();
+      } else {
+      }
+    },
+    [handleView]
+  );
 
   useEffect(() => {
     let observer: IntersectionObserver;

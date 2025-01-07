@@ -61,7 +61,7 @@ function Blog() {
       <Title className={isInView ? 'slide' : ''}>Write a blog.</Title>
       <ul>
         {data.map((item) => (
-          <li>
+          <li key={item.id}>
             <Link href={item.url} target="_black">
               {item.thumbnail ? (
                 <Image
