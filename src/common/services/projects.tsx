@@ -112,6 +112,10 @@ export default class ProiectService {
       .filter((item) => item.category == category)
       .filter((item) => tags.filter((tag) => item.tags.includes(tag)));
   }
+  static getLatestProjects() {
+    const index = ProiectService.data.length - 4;
+    return ProiectService.data.slice(index).reverse();
+  }
   static getCategories(): string[] {
     const categorySet: Set<string> = new Set();
     categorySet.add('all');
