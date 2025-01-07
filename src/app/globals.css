@@ -120,3 +120,14 @@ li {
     filter: blur(10px);
   }
 }
+@keyframes followUp {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(4px, -4px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
