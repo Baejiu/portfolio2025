@@ -5,6 +5,7 @@ import Intro from './(main)/sections/Intro';
 import Features from './(main)/sections/Features';
 import Skills from './(main)/sections/Skills';
 import LatestProjects from './(main)/sections/LatestProjects';
+import Blog from './(main)/sections/Blog';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <LatestProjects />
       <Features />
       <Skills />
+      <Blog />
     </PageContainer>
   );
 }
