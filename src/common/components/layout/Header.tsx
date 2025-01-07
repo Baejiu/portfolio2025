@@ -74,9 +74,9 @@ function Header() {
           <NavItem>
             <Link href={'/about'}>about</Link>
           </NavItem>
-          {/* <NavItem>
+          <NavItem>
             <Link href={'/projects'}>projects</Link>
-          </NavItem> */}
+          </NavItem>
           <NavItem>
             <Link href={'https://ji-u.tistory.com/'} target="_blank">
               blog

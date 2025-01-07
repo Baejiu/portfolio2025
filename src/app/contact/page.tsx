@@ -37,7 +37,6 @@ const Contents = styled.div`
   position: relative;
   border-radius: ${({ theme }) => theme.radius.large};
   background-color: ${({ theme }) => `${theme.color.bg}DE`};
-
   display: flex;
   flex-direction: column;
   justify-content: center;
